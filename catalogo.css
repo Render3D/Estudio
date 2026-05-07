@@ -1,6 +1,6 @@
 /* ══════════════════════════════════════════════
    catalogo.css — estilos exclusivos del catálogo
-   (Requiere style.css cargado antes)
+  
    ══════════════════════════════════════════════ */
 
 
@@ -18,7 +18,7 @@
   padding-top: calc(40px + var(--space-lg));
  
   overflow: hidden;
-  background-color: var(--color-surface);
+  background-color: var( --color-bg);
  
   
 }
@@ -27,54 +27,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
-}
-
-
-/* Nav links - Versión unificada */
-.site-nave ul {
-  display: flex;
-  align-items: center;
-  gap: var(--space-md);
-  list-style: none;
-}
-
-.site-nave a {
-  font-family: var(--font-body);
-  font-size: var(--text-sm);
-  font-weight: var(--fw-regular);
-  letter-spacing: 0.06em;
-  text-transform: lowercase;
-  color: var(--color-surface); 
-  text-decoration: none;
-  position: relative;
-  padding-bottom: 2px;
-  transition: color var(--duration);
-
-  /* --- LA SOMBRA MÁGICA --- */
-  /* 0px de desplazamiento horizontal, 1px vertical, 4px de desenfoque */
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.50); 
-}
-
-/* Hover effect */
-.site-nave a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 1px;
-  background: currentColor;
-  transition: width 0.3s var(--ease-out);
-  
-  /* Agregamos sombra también a la línea para que no desaparezca en zonas claras */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-.site-nave a:hover::after {
-  width: 100%;
-}
-
-.site-nave a:hover {
-  color: var(--color-accent-dark);
 }
 
 
