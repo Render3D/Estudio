@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto — Renders</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="proyecto.css" />
+</head>
+<body>
+ 
+
+ 
+  <main>
+ 
+    <!-- ─── BREADCRUMB ─── -->
+    <nav class="breadcrumb" aria-label="Ruta de navegación">
+      <div class="container">
+        <a href="catalogo.html">← volver al catálogo</a>
+      </div>
+    </nav>
+ 
+    <!-- ─── HERO DEL PROYECTO ─── -->
+    <section class="proyecto-hero">
+      <div class="proyecto-hero-img">
+        <!-- Imagen principal del proyecto -->
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=85"
+             alt="Vista principal del proyecto" />
+      </div>
+    </section>
+ 
+    <!-- ─── INFO DEL PROYECTO ─── -->
+    <section class="proyecto-info">
+      <div class="container proyecto-info-inner">
+ 
+        <div class="proyecto-meta">
+          <span class="label">cocina</span>
+          <h1 class="proyecto-title">Cocina<br /><em>Minimalista</em></h1>
+          <ul class="proyecto-details">
+            <li>
+              <span class="detail-key">año</span>
+              <span class="detail-val">2025</span>
+            </li>
+            <li>
+              <span class="detail-key">software</span>
+              <span class="detail-val">Autocad</span>
+            </li>
+            <li>
+              <span class="detail-key">cliente</span>
+              <span class="detail-val">Proyecto particular</span>
+            </li>
+          </ul>
+          <a href="index.html#contacto" class="btn-outline">¿te gustó? hablemos</a>
+        </div>
+ 
+        <div class="proyecto-desc">
+          <p>
+            Descripción del proyecto. Contá brevemente el concepto detrás del diseño,
+            los materiales elegidos, la paleta cromática, o lo que querés destacar
+            del proceso 
+          </p>
+          <p>
+            una segunda línea con más contexto: el desafío técnico,
+            la iluminación, o simplemente la sensación que querías transmitir.
+          </p>
+        </div>
+ 
+      </div>
+    </section>
+ 
+    <!-- ─── GALERÍA DE RENDERS ─── -->
+    <section class="proyecto-galeria">
+      <div class="container">
+        <h2 class="galeria-title">Imágenes del proyecto</h2>
+ 
+        <div class="galeria-grid">
+ 
+          <!-- Imagen destacada (wide) -->
+          <figure class="galeria-item galeria-item--wide">
+            <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=1400&q=85"
+                 alt="Vista alternativa 1" loading="lazy" />
+          </figure>
+ 
+          <figure class="galeria-item">
+            <img src="https://images.unsplash.com/photo-1565183997392-2f6f122e5912?w=800&q=80"
+                 alt="Vista alternativa 2" loading="lazy" />
+          </figure>
+ 
+          <figure class="galeria-item">
+            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80"
+                 alt="Vista alternativa 3" loading="lazy" />
+          </figure>
+ 
+          <!-- Agregar más <figure class="galeria-item"> según corresponda -->
+ 
+        </div>
+      </div>
+    </section>
+ 
+    <!-- ─── NAVEGACIÓN ENTRE PROYECTOS ─── -->
+    <nav class="proyecto-nav">
+      <div class="container proyecto-nav-inner">
+        <a href="proyecto.html?id=5" class="pnav-item pnav-prev">
+          <span class="pnav-dir">← anterior</span>
+          <span class="pnav-name">Terraza</span>
+        </a>
+        <a href="catalogo.html" class="pnav-center" aria-label="Ver todos">
+          <span>ver todos</span>
+        </a>
+        <a href="proyecto.html?id=2" class="pnav-item pnav-next">
+          <span class="pnav-dir">siguiente →</span>
+          <span class="pnav-name">Baño</span>
+        </a>
+      </div>
+    </nav>
+ 
+  </main>
+ 
+  <!-- ─── FOOTER ─── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-logo"><img src="logo.jpg" alt="logo"></span>
+      <span class="footer-copy">© 2025 — todos los derechos reservados</span>
+    </div>
+  </footer>
+ 
+  <script src="main.js"></script>
+</body>
+</html>

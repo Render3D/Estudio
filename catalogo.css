@@ -1,0 +1,320 @@
+/* ══════════════════════════════════════════════
+   catalogo.css — estilos exclusivos del catálogo
+   (Requiere style.css cargado antes)
+   ══════════════════════════════════════════════ */
+
+
+/* ─── Link activo en nav ─── */
+.nav-active {
+  color: var(--color-accent-dark) !important;
+  border-bottom: 1px solid var(--color-accent-dark);
+  padding-bottom: 1px;
+}
+
+
+
+/* ─── Page header ─── */
+.page-header {
+  padding-top: calc(40px + var(--space-lg));
+ 
+  overflow: hidden;
+  background-color: var(--color-surface);
+ 
+  
+}
+
+.page-header .container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+
+/* Nav links - Versión unificada */
+.site-nave ul {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  list-style: none;
+}
+
+.site-nave a {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--fw-regular);
+  letter-spacing: 0.06em;
+  text-transform: lowercase;
+  color: var(--color-surface); 
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 2px;
+  transition: color var(--duration);
+
+  /* --- LA SOMBRA MÁGICA --- */
+  /* 0px de desplazamiento horizontal, 1px vertical, 4px de desenfoque */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.50); 
+}
+
+/* Hover effect */
+.site-nave a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: currentColor;
+  transition: width 0.3s var(--ease-out);
+  
+  /* Agregamos sombra también a la línea para que no desaparezca en zonas claras */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+.site-nave a:hover::after {
+  width: 100%;
+}
+
+.site-nave a:hover {
+  color: var(--color-accent-dark);
+}
+
+
+
+
+
+
+/* ─── Controles: filtros + ordenamiento ─── */
+.catalog-controls {
+  padding-block: var(--space-md) var(--space-sm);
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.controls-inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-bottom: var(--space-sm);
+}
+
+/* Filtros (hereda de style.css, pequeños ajustes) */
+.catalog-controls .filters {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+  /* espacio para el scroll */
+  gap: 0.4rem;
+}
+
+.catalog-controls .filters::-webkit-scrollbar {
+  display: none;
+}
+
+/* Ordenamiento */
+.sort-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sort-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sort-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: var(--fw-medium);
+  color: var(--color-text);
+  padding: 0.4rem 2rem 0.4rem 0.75rem;
+  cursor: pointer;
+  transition: border-color var(--duration);
+}
+
+.sort-select:hover,
+.sort-select:focus {
+  border-color: var(--color-text);
+  outline: none;
+}
+
+.select-arrow {
+  position: absolute;
+  right: 0.6rem;
+  font-size: 0.6rem;
+  color: var(--color-text-muted);
+  pointer-events: none;
+}
+
+/* Contador de resultados */
+.results-count {
+  font-size: var(--text-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  padding-top: 0.5rem;
+}
+
+.results-count span {
+  color: var(--color-text);
+}
+
+
+/* ─── Masonry grid ─── */
+.catalog-grid-section {
+  padding-block: var(--space-md) var(--space-xl);
+}
+
+/*
+  Masonry con CSS columns.
+  Es la solución más simple y sin JS.
+  Los items se ordenan en columnas de arriba a abajo.
+  El JS de catalogo.js maneja el show/hide y el sort
+  reinsertando los elementos en el DOM.
+*/
+.masonry-grid {
+  columns: 1;
+  column-gap: 1.1rem;
+}
+
+.masonry-grid .render-card {
+  break-inside: avoid;
+  /* ← clave para que no corte una card entre columnas */
+  margin-bottom: 1.1rem;
+  display: inline-block;
+  /* ← necesario para que columns funcione bien */
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+
+/* Alturas variables para efecto masonry */
+.masonry-grid .render-card .card-img-wrap {
+  aspect-ratio: 4 / 3;
+  /* default */
+}
+
+.masonry-grid .render-card.card-tall .card-img-wrap {
+  aspect-ratio: 3 / 4;
+  /* portrait */
+}
+
+.masonry-grid .render-card.card-wide .card-img-wrap {
+  aspect-ratio: 16 / 9;
+  /* landscape */
+}
+
+/* Card info (agrega fecha) */
+.masonry-grid .card-info {
+  padding: 0.875rem 1rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 0.2rem 0.5rem;
+  align-items: start;
+}
+
+.masonry-grid .card-category {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: var(--text-xs);
+  font-weight: var(--fw-medium);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.masonry-grid .card-title {
+  grid-column: 1;
+  grid-row: 2;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: var(--fw-light);
+  font-style: italic;
+  color: var(--color-text);
+}
+
+.card-date {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: end;
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+/* Estado vacío */
+.empty-state {
+  text-align: center;
+  padding-block: var(--space-xl);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--text-xl);
+  color: var(--color-text-muted);
+}
+
+
+/* ─── Cards ocultas por filtro ─── */
+.render-card.is-hidden {
+  display: none !important;
+}
+
+
+/* ─── Tablet (≥ 640px) ─── */
+@media (min-width: 640px) {
+  .controls-inner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .catalog-controls .filters {
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+
+  .masonry-grid {
+    columns: 2;
+  }
+}
+
+
+/* ─── Desktop (≥ 1024px) ─── */
+@media (min-width: 1024px) {
+  .catalog-controls {
+    top: 65px;
+  }
+
+  .masonry-grid {
+    columns: 3;
+    column-gap: 1.5rem;
+  }
+
+  .masonry-grid .render-card {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Card wide ocupa 2 cols en desktop simulando con column-span */
+  /* Nota: column-span en masonry no funciona bien siempre.
+     Para wide, el landscape 16/9 ya da el efecto visual suficiente. */
+}
