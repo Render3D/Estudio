@@ -1,66 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Catálogo — Renders</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="catalogo.css" />
 </head>
+
 <body>
- 
+
   <!-- ─── HEADER (igual al index) ─── -->
   <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="logo">
         <span class="logo-name logoheader"><img src="logo.jpg" alt=""></span>
-       
+
       </a>
- 
+
       <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span>
         <span></span>
       </button>
 
-        <nav class="site-nave" aria-label="Navegación principal">
-                <ul>
-                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="#cateogias">Categorias</a></li>
-                   
-                </ul>
-            </nav>
- 
-     
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#sobre-mi">sobre mí</a></li>
+          <li><a href="#contacto">contacto</a></li>
+
+        </ul>
+      </nav>
+
+
     </div>
   </header>
- 
+
   <main>
- 
+
     <!-- ─── PAGE HEADER ─── -->
     <section class="page-header">
       <div class="container">
-      
+
       </div>
-      
+
     </section>
- 
+
     <!-- ─── CONTROLES: FILTROS + ORDEN ─── -->
     <section class="catalog-controls" id="cateogias">
       <div class="container controls-inner">
- 
+
         <!-- Filtros de categoría -->
         <div class="filters" role="tablist" aria-label="Filtrar por categoría">
           <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">todos</button>
-          <button class="filter-btn" data-filter="cocina"     role="tab" aria-selected="false">cocina</button>
-          <button class="filter-btn" data-filter="bano"       role="tab" aria-selected="false">baño</button>
-          <button class="filter-btn" data-filter="living"     role="tab" aria-selected="false">living</button>
+          <button class="filter-btn" data-filter="cocina" role="tab" aria-selected="false">cocina</button>
+          <button class="filter-btn" data-filter="bano" role="tab" aria-selected="false">baño</button>
+          <button class="filter-btn" data-filter="living" role="tab" aria-selected="false">living</button>
           <button class="filter-btn" data-filter="dormitorio" role="tab" aria-selected="false">dormitorio</button>
-          <button class="filter-btn" data-filter="exterior"   role="tab" aria-selected="false">exterior</button>
+          <button class="filter-btn" data-filter="exterior" role="tab" aria-selected="false">exterior</button>
         </div>
- 
+
         <!-- Ordenamiento -->
         <div class="sort-wrap">
           <label for="sort-select" class="sort-label">ordenar</label>
@@ -72,21 +77,21 @@
             <span class="select-arrow">↕</span>
           </div>
         </div>
- 
+
       </div>
- 
+
       <!-- Contador de resultados -->
       <div class="container">
         <p class="results-count"><span id="count">0</span> proyectos</p>
       </div>
     </section>
- 
+
     <!-- ─── GRILLA MASONRY ─── -->
     <section class="catalog-grid-section">
       <div class="container">
- 
+
         <div class="masonry-grid" id="masonry-grid">
- 
+
           <!--
             Atributos a personalizar por card:
             · data-category : cocina | bano | living | dormitorio | exterior
@@ -96,12 +101,12 @@
                 .card-tall  → más alta  (portrait)
                 .card-wide  → más ancha (landscape, ocupa 2 cols en desktop)
           -->
- 
+
           <article class="render-card card-tall" data-category="cocina" data-date="2025-04">
             <a href="proyecto.html?id=1" class="card-link" aria-label="Ver Cocina Minimalista">
               <div class="card-img-wrap">
                 <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&q=80"
-                     alt="Cocina minimalista con isla central" loading="lazy" />
+                  alt="Cocina minimalista con isla central" loading="lazy" />
                 <div class="card-overlay"><span>ver proyecto</span></div>
               </div>
               <div class="card-info">
@@ -111,12 +116,12 @@
               </div>
             </a>
           </article>
- 
+
           <article class="render-card" data-category="bano" data-date="2025-03">
             <a href="proyecto.html?id=2" class="card-link" aria-label="Ver Baño Spa">
               <div class="card-img-wrap">
                 <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=800&q=80"
-                     alt="Baño spa con bañera exenta" loading="lazy" />
+                  alt="Baño spa con bañera exenta" loading="lazy" />
                 <div class="card-overlay"><span>ver proyecto</span></div>
               </div>
               <div class="card-info">
@@ -126,12 +131,12 @@
               </div>
             </a>
           </article>
- 
+
           <article class="render-card card-wide" data-category="living" data-date="2025-02">
             <a href="proyecto.html?id=3" class="card-link" aria-label="Ver Living Panorámico">
               <div class="card-img-wrap">
                 <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1200&q=80"
-                     alt="Living con ventanal panorámico" loading="lazy" />
+                  alt="Living con ventanal panorámico" loading="lazy" />
                 <div class="card-overlay"><span>ver proyecto</span></div>
               </div>
               <div class="card-info">
@@ -141,12 +146,12 @@
               </div>
             </a>
           </article>
- 
+
           <article class="render-card" data-category="dormitorio" data-date="2025-02">
             <a href="proyecto.html?id=4" class="card-link" aria-label="Ver Suite Master">
               <div class="card-img-wrap">
                 <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?w=800&q=80"
-                     alt="Suite master con cabecero de madera" loading="lazy" />
+                  alt="Suite master con cabecero de madera" loading="lazy" />
                 <div class="card-overlay"><span>ver proyecto</span></div>
               </div>
               <div class="card-info">
@@ -156,12 +161,12 @@
               </div>
             </a>
           </article>
- 
+
           <article class="render-card card-tall" data-category="exterior" data-date="2025-01">
             <a href="proyecto.html?id=5" class="card-link" aria-label="Ver Terraza Jardín">
               <div class="card-img-wrap">
                 <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80"
-                     alt="Terraza con jardín vertical" loading="lazy" />
+                  alt="Terraza con jardín vertical" loading="lazy" />
                 <div class="card-overlay"><span>ver proyecto</span></div>
               </div>
               <div class="card-info">
@@ -171,12 +176,12 @@
               </div>
             </a>
           </article>
- 
+
           <article class="render-card" data-category="cocina" data-date="2024-12">
             <a href="proyecto.html?id=6" class="card-link" aria-label="Ver Cocina Industrial">
               <div class="card-img-wrap">
                 <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80"
-                     alt="Cocina de estilo industrial" loading="lazy" />
+                  alt="Cocina de estilo industrial" loading="lazy" />
                 <div class="card-overlay"><span>ver proyecto</span></div>
               </div>
               <div class="card-info">
@@ -186,22 +191,22 @@
               </div>
             </a>
           </article>
- 
+
           <!-- Agregar más cards siguiendo el mismo patrón ↑ -->
- 
+
         </div>
         <!-- /masonry-grid -->
- 
+
         <!-- Estado vacío (se muestra cuando no hay resultados) -->
         <div class="empty-state" id="empty-state" hidden>
           <p>No hay renders en esta categoría todavía.</p>
         </div>
- 
+
       </div>
     </section>
- 
+
   </main>
- 
+
   <!-- ─── FOOTER (igual al index) ─── -->
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -209,8 +214,9 @@
       <span class="footer-copy">© 2026 — todos los derechos reservados</span>
     </div>
   </footer>
- 
+
   <script src="main.js"></script>
   <script src="catalogo.js"></script>
 </body>
+
 </html>
